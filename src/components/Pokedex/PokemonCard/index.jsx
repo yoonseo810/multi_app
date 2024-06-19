@@ -18,9 +18,9 @@ const PokemonCard = ({ pokemon = {}, favList = [] }) => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const isAlreadyAdded = favList?.find(
-    (favPokemon) => favPokemon.name === pokemon.name
-  );
+  const isAlreadyAdded = favList
+    ? favList.find((favPokemon) => favPokemon.name === pokemon.name)
+    : false;
 
   const handleAdd = () => {
     const payloadObj = {

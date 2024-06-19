@@ -12,6 +12,8 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [doLogUserIn, isLogInLoading, isLogInError] = useThunk(logUserIn);
 
+  // console.log(isLogInError);
+
   const navigate = useNavigate();
 
   const { loginData } = useSelector((state) => state.users);
@@ -71,9 +73,8 @@ const Login = () => {
       toast.success(loginData.message);
       navigate('/');
       navigate(0);
-    }
-    if (isLogInError) {
-      toast.error(isLogInError);
+    } else if (typeof loginData === 'string') {
+      toast.error(`${loginData}\nPlease try again.`);
     }
   }, [loginData, isLogInError, navigate]);
 

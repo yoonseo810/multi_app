@@ -16,6 +16,7 @@ const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(logUserIn.pending, (state, action) => {
       state.isLoading = true;
+      state.loginData = {};
     });
     builder.addCase(logUserIn.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -23,7 +24,7 @@ const usersSlice = createSlice({
     });
     builder.addCase(logUserIn.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.error;
+      state.error = action.payload;
       state.loginData = {};
     });
     builder.addCase(getUserInfo.pending, (state, action) => {

@@ -4,7 +4,11 @@ import axiosInstance from '../../../utils/axiosInstance';
 export const logUserIn = createAsyncThunk(
   'users/login',
   async (userCredential) => {
-    const res = await axiosInstance.post('/api/users/login', userCredential);
-    return res.data;
+    try {
+      const res = await axiosInstance.post('/api/users/login', userCredential);
+      return res.data;
+    } catch (err) {
+      return err.response.data.message;
+    }
   }
 );
