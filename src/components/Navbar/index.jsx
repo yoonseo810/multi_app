@@ -63,7 +63,6 @@ const NavBar = () => {
           </NavbarItem>
         )}
         {!getUserInfoLoading &&
-          getUserInfoSuccess &&
           !user?.fullName &&
           navBarItemsForNonUsers.map((item) => (
             <NavbarItem key={item.id}>
