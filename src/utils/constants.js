@@ -18,6 +18,11 @@
 
 export const navBarItemsForUsers = [
   {
+    id: 'memo',
+    label: 'Memo',
+    linkTo: '/memo',
+  },
+  {
     id: 'expense',
     label: 'Expense Tracker',
     linkTo: '/expense',
@@ -85,6 +90,43 @@ export const transactionColumns = [
   {
     key: 'delete',
     label: 'DELETE',
+  },
+];
+
+export const memoColumns = [
+  {
+    key: 'title',
+    label: 'TITLE',
+  },
+  {
+    key: 'content',
+    label: 'CONTENT',
+  },
+  {
+    key: 'edit',
+    label: 'EDIT',
+  },
+  {
+    key: 'delete',
+    label: 'DELETE',
+  },
+];
+
+export const memoDummyData = [
+  {
+    _id: '1',
+    title: 'TEST1',
+    content: 'content for test 1',
+  },
+  {
+    _id: '2',
+    title: 'TEST2',
+    content: 'content for test 2',
+  },
+  {
+    _id: '3',
+    title: 'TEST3',
+    content: 'content for test 3',
   },
 ];
 

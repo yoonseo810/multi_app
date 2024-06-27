@@ -3,12 +3,14 @@ import { transactionsReducer } from './slices/transactionSlice';
 import { usersReducer } from './slices/userSlice';
 import { pokedexReducer } from './slices/pokedexSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
+import { memosReducer } from './slices/memoSlice';
 
 export const store = configureStore({
   reducer: {
     transactions: transactionsReducer,
     users: usersReducer,
     pokedex: pokedexReducer,
+    memos: memosReducer,
   },
 });
 
@@ -25,3 +27,7 @@ export * from './thunks/pokedex/searchPokemon';
 export * from './thunks/pokedex/fetchFavourites';
 export * from './thunks/pokedex/addPokemon';
 export * from './thunks/pokedex/removePokemon';
+export * from './thunks/memo/fetchMemos';
+export * from './thunks/memo/deleteMemo';
+export * from './thunks/memo/createMemo';
+export * from './thunks/memo/editMemo';

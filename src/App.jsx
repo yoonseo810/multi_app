@@ -11,6 +11,7 @@ import ExpenseTracker from './pages/ExpenseTracker';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Pokedex from './pages/Pokedex';
+import Memo from './pages/Memo';
 import { Toaster } from 'react-hot-toast';
 import RouteGuard from './components/common/RouteGuard';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/movies" exact element={<Movies />} />
             <Route path="/favourites" exact element={<Favourites />} />
             <Route path="/rated" exact element={<Rated />} />
+            <Route path="/memo" exact element={<Memo />} />
 
             {/* <Route path="/books" exact element={<Books />} /> */}
             <Route path="/expense" exact element={<ExpenseTracker />} />

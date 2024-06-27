@@ -7,12 +7,13 @@ import {
   TableHeader,
   TableRow,
 } from '@nextui-org/react';
+import PropTypes from 'prop-types';
 
-const TableSkeleton = () => {
+const TableSkeleton = ({ column = 5, row = 3 }) => {
   return (
     <Table className="w-9/12" aria-label="transaction table loading">
       <TableHeader>
-        {Array(5)
+        {Array(column)
           .fill(0)
           .map((_, index) => (
             <TableColumn key={index}>
@@ -23,11 +24,11 @@ const TableSkeleton = () => {
           ))}
       </TableHeader>
       <TableBody>
-        {Array(3)
+        {Array(row)
           .fill(0)
           .map((_, index) => (
             <TableRow key={index}>
-              {Array(5)
+              {Array(column)
                 .fill(0)
                 .map((_, index) => (
                   <TableCell key={index}>
@@ -43,4 +44,8 @@ const TableSkeleton = () => {
   );
 };
 
+TableSkeleton.propTypes = {
+  column: PropTypes.number,
+  row: PropTypes.number,
+};
 export default TableSkeleton;
