@@ -8,23 +8,6 @@ const AppReducer = (state, action) => {
         loading: false,
         transactions: action.payload,
       };
-    // case actions.GET_TRANSACTIONS:
-    //   return {
-    //     ...state,
-    //     loading: true,
-    //   };
-    // case actions.GET_TRANSACTIONS_SUCCESS:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     transactions: action.payload,
-    //   };
-    // case actions.GET_TRANSACTIONS_ERROR:
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     transactions: [],
-    //   };
     case actions.DELETE_TRANSACTION:
       return {
         ...state,

@@ -12,8 +12,6 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [doLogUserIn, isLogInLoading, isLogInError] = useThunk(logUserIn);
 
-  // console.log(isLogInError);
-
   const navigate = useNavigate();
 
   const { loginData } = useSelector((state) => state.users);

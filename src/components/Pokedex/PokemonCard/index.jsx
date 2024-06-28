@@ -38,9 +38,6 @@ const PokemonCard = ({ pokemon = {}, favList = [] }) => {
     <>
       {isOpen && (
         <DetailsModal
-          // isAlreadyAdded={isAlreadyAdded}
-          // addLoading={addLoading}
-          // handleAdd={handleAdd}
           pokemon={pokemon}
           isOpen={isOpen}
           onOpenChange={onOpenChange}

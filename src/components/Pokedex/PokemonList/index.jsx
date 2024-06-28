@@ -8,14 +8,11 @@ import ListSkeleton from '../ListSkeleton';
 
 const PokemonList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  // const [selectedPokemon, setSelectedPokemon] = useState({});
   const [doFetchAllPokemon, fetchLoading] = useThunk(fetchAllPokemon);
   const {
     parsedData: { next = '', previous = '', parsedData = [] },
     data,
   } = useSelector((state) => state.pokedex);
-
-  // const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
     doFetchAllPokemon('https://pokeapi.co/api/v2/pokemon/?limit=20');

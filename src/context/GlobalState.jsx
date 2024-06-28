@@ -9,8 +9,6 @@ const initialState = {
   loading: true,
 };
 
-// create context
-
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
@@ -48,11 +46,6 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const addTransaction = async (transaction) => {
-    // const config = {
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // };
     try {
       const res = await axiosInstance.post(
         '/api/transactions/add',

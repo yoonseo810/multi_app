@@ -9,14 +9,7 @@ import {
 } from '@nextui-org/react';
 import DetailsCard from '../DetailsCard';
 
-const DetailsModal = ({
-  // isAlreadyAdded,
-  // handleAdd,
-  // addLoading,
-  pokemon,
-  isOpen,
-  onOpenChange,
-}) => {
+const DetailsModal = ({ pokemon, isOpen, onOpenChange }) => {
   return (
     <Modal size="4xl" isOpen={isOpen} onOpenChange={onOpenChange}>
       <ModalContent>
@@ -27,15 +20,6 @@ const DetailsModal = ({
               <DetailsCard pokemon={pokemon} />
             </ModalBody>
             <ModalFooter>
-              {/* {!isAlreadyAdded && (
-                <Button
-                  color="success"
-                  isLoading={addLoading}
-                  onPress={handleAdd}
-                >
-                  {addLoading ? 'Adding' : 'Add'}
-                </Button>
-              )} */}
               <Button onPress={onClose}>Close</Button>
             </ModalFooter>
           </>
@@ -49,9 +33,6 @@ DetailsModal.propTypes = {
   pokemon: PropTypes.object,
   isOpen: PropTypes.bool,
   onOpenChange: PropTypes.func,
-  // isAlreadyAdded: PropTypes.bool,
-  // handleAdd: PropTypes.func,
-  // addLoading: PropTypes.bool,
 };
 
 export default DetailsModal;

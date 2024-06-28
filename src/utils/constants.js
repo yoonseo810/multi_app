@@ -1,21 +1,3 @@
-// export const navBarItemsForUsers = [
-//   {
-//     id: 'movies',
-//     label: 'Movies',
-//     linkTo: '/movies',
-//   },
-//   {
-//     id: 'books',
-//     label: 'Books',
-//     linkTo: '/books',
-//   },
-//   {
-//     id: 'expense',
-//     label: 'Expense Tracker',
-//     linkTo: '/expense',
-//   },
-// ];
-
 export const navBarItemsForUsers = [
   {
     id: 'memo',

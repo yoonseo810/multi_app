@@ -50,7 +50,6 @@ const NavBar = () => {
           <NavbarItem key="logout">
             <Link href="/login">
               <Button
-                // as={Link}
                 color="danger"
                 variant="flat"
                 onPress={() => {

@@ -16,6 +16,8 @@ import { deleteMemo, fetchMemos } from '../../../store';
 import { useSelector } from 'react-redux';
 import TableSkeleton from '../../ExpenseTracker/TableSkeleton';
 import EditMemo from '../EditMemo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
 const MemoTable = () => {
   const [selectedId, setSelectedId] = useState('');
@@ -30,11 +32,6 @@ const MemoTable = () => {
     doFetchMemos();
   }, [doFetchMemos]);
 
-  // const handleEdit = (item) => {
-  //   setSelectedId(item._id);
-  //   console.log(item);
-  // };
-
   const handleDelete = (id) => {
     setSelectedId(id);
     doDeleteMemo(id);
@@ -45,7 +42,7 @@ const MemoTable = () => {
         return {
           ...item,
           title: item.title.toUpperCase(),
-          edit: <EditMemo fetchMemos={doFetchMemos} memo={item} />,
+          edit: <EditMemo memo={item} />,
           delete: (
             <Button
               onPress={() => handleDelete(item._id)}
@@ -55,7 +52,7 @@ const MemoTable = () => {
               {selectedId === item._id && isDeleteLoading ? (
                 <Spinner color="default" />
               ) : (
-                'Delete'
+                <FontAwesomeIcon icon={faTrashCan} />
               )}
             </Button>
           ),

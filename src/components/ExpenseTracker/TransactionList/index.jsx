@@ -63,8 +63,6 @@ const TransactionList = () => {
     return <TableSkeleton />;
   }
 
-  // console.log(parsedData);
-
   return (
     <Table className="w-9/12" aria-label="transaction table">
       <TableHeader columns={transactionColumns}>

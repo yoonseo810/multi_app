@@ -10,12 +10,13 @@ import {
   useDisclosure,
 } from '@nextui-org/react';
 import PropTypes from 'prop-types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useThunk } from '../../../hooks/useThunk';
 import { editMemo } from '../../../store';
-import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
-const EditMemo = ({ memo, fetchMemos }) => {
+const EditMemo = ({ memo }) => {
   const [title, setTitle] = useState(memo.title);
   const [content, setContent] = useState(memo.content);
 
@@ -23,30 +24,20 @@ const EditMemo = ({ memo, fetchMemos }) => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const { updatedData } = useSelector((state) => state.memos);
-
-  const handleEditMemo = async () => {
+  const handleEditMemo = () => {
     const payloadObj = {
       ...memo,
       title,
       content,
     };
     doEditMemo(payloadObj);
-    // await fetchMemos();
-    // console.log(memo);
-    // console.log(title, content);
   };
-
-  // useEffect(() => {
-  //   if (updatedData) {
-  //     fetchMemos();
-  //   }
-  // }, [updatedData, fetchMemos]);
 
   return (
     <>
       <Button onPress={onOpen} color="primary" variant="shadow">
-        Edit
+        {/* Edit */}
+        <FontAwesomeIcon icon={faPenToSquare} />
       </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
@@ -102,7 +93,6 @@ const EditMemo = ({ memo, fetchMemos }) => {
 
 EditMemo.propTypes = {
   memo: PropTypes.object,
-  fetchMemos: PropTypes.func,
 };
 
 export default EditMemo;
